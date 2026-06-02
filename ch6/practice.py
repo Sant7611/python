@@ -16,9 +16,30 @@
 #     print("You are failed. ")
 
 
-# 4.
-char = input("Enter any username: ")
-if(len(char) <=10):
-    print("The username has less than 10 character")
+# # 4.
+# char = input("Enter any username: ")
+# if(len(char) <=10):
+#     print("The username has less than 10 character")
+# else:
+#     print("The username has more than or equal to 10 character.")
+
+# #5
+# spam = ['make a lot of money', 'buy now', 'subscribe this', 'click this']
+
+# msg = input("Enter any sentence: ").lower()
+
+
+# if (spam[0] in msg or  spam[1] in msg or  spam[2] in msg or  spam[3] in msg):
+    
+#     print("This is a spam message.")
+# else:
+#     print("This is not a spam message.")
+
+
+#6.
+lst = ["ram", "shyam", 'hari', 'karan']
+name = input("enter the name: ").lower()
+if name in lst:
+    print("Your name is in the list")
 else:
-    print("The username has more than or equal to 10 character.")
+    print("You don't have that name in the list.")
