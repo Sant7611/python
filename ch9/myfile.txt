@@ -1,0 +1,3 @@
+This is the updated string
+I am a good boy
+hello dear who is this?This is newly added line. using append mode
