@@ -26,6 +26,6 @@ v2 = Vector(2,3,4)
 v3 = v1 + v2
 # print(v3.x, v3.y, v3.z)
 print(v3)
-
+ 
 m3 = v1 * v2
 print(m3)
