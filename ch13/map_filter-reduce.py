@@ -8,6 +8,7 @@ num = [1,2,3,4,5,6]
 #use2
 square = lambda x:x*x # this is a function
 
+# map(function, iterable)
 sqList = map(square, num)
 print(list(sqList))
 
