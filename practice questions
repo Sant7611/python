@@ -1,0 +1,38 @@
+1. Data Validation with Encapsulation & @property
+Real-world use case: Sanitizing and validating data models (e.g., in a web backend).
+
+The Scenario: You're building a user management system.
+The Task: Create a User class. It should take a username and password on initialization.
+Make the internal password attribute private (e.g., _password).
+Create a @property for password that only returns a masked version of the password (e.g., "********").
+Create a .setter for password that checks if the new password is at least 8 characters long and contains at least one number. If it doesn't, raise a ValueError. If it does, update the hidden _password.
+2. Composition (Building Systems from Parts)
+Real-world use case: "Composition over Inheritance" is a golden rule in modern software design to prevent deeply nested, fragile class hierarchies.
+
+The Scenario: An e-commerce checkout block.
+The Task:
+Create a Product class with name and price attributes.
+Create a ShoppingCart class. It shouldn't inherit from anything, but it should contain a list to hold items.
+Add methods to ShoppingCart to:
+add_item(product): Appends a Product object.
+get_total(): Loops through the products and returns the total price.
+Bonus: Add an __str__ magic method to ShoppingCart so print(cart) outputs something clean like: "Cart has 3 items. Total: $45.00".
+
+3. Abstract Classes (Enforcing a Contract)
+Real-world use case: Creating pluggable systems where multiple classes must guarantee they have the same methods (like different database connectors or payment gateways).
+
+The Scenario: A notification service that can send alerts via different channels.
+The Task:
+Import ABC and abstractmethod.
+Create an abstract base class called NotificationProvider with an abstract method send_message(user, message).
+Create two subclasses: EmailNotifier and SMSNotifier.
+If a developer tries to instantiate an EmailNotifier without implementing the send_message method, Python should throw an error. Implement the methods to just print "Sending Email to [user]: [message]" (and similarly for SMS).
+
+
+4. @classmethod vs @staticmethod
+Real-world use case: classmethods are heavily used as "Alternative Constructors" (e.g., parsing a dictionary to build an object), and staticmethods are used for utility functions that belong in the class namespace but don't need class/instance data.
+
+The Scenario: Parsing configuration files for an app.
+The Task: Create an AppConfig class with an __init__ that takes db_url and debug_mode.
+Class Method: Create an alternative constructor using @classmethod called from_dict(cls, data_dict). It should take a dictionary like {"db": "mysql://...", "debug": True} and return a new instance of AppConfig.
+Static Method: Create a @staticmethod called is_valid_db_url(url) that takes a string and returns True if it starts with "postgresql://" or "mysql://", and False otherwise. You don't need self or cls for this check.
